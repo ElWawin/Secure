@@ -13,34 +13,51 @@
     <button onclick="generarPassword()">Generar Contraseña</button>
     <p id="resultado"></p>
   </div>
+
+  <!-- Código de Instagram -->
   <style>
-  .ig-link {
-    text-decoration: none;
-    color: #e1306c;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
+    .ig-link {
+      text-decoration: none;
+      color: #e1306c;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
 
-  .ig-link:hover {
-    color: #ff66a5;
-  }
+    .ig-link:hover {
+      color: #ff66a5;
+    }
 
-  .ig-logo {
-    width: 24px;
-    vertical-align: middle;
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-  }
+    .ig-logo {
+      width: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
 
-  .ig-link:hover .ig-logo {
-    transform: scale(1.2);
-  }
-</style>
+    .ig-link:hover .ig-logo {
+      transform: scale(1.2);
+    }
+  </style>
 
-<div style="text-align: center; margin-top: 20px;">
-  <a href="https://instagram.com/el_wawin_" target="_blank" class="ig-link">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="ig-logo">
-    Mi Ig: @el_wawin_
-  </a>
-</div>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://instagram.com/el_wawin_" target="_blank" class="ig-link">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="ig-logo">
+      Mi Ig: @el_wawin_
+    </a>
+  </div>
+
+  <!-- JavaScript directo -->
+  <script>
+    function generarPassword() {
+      const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+      let password = '';
+      for (let i = 0; i < 12; i++) {
+        const randomIndex = Math.floor(Math.random() * caracteres.length);
+        password += caracteres[randomIndex];
+      }
+      document.getElementById('resultado').innerText = password;
+    }
+  </script>
+</body>
+</html>
